@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Grid</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="None">
+        <meta name="Keywords" content="None">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="format-detection" content="telephone=no">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                box-sizing: border-box;
+            }
+            .b_grid_widget {
+                background: #f3f3f3;
+                border: 1px solid rgba(230, 230, 230, 1);
+                border-top-width: 0px;
+                padding: 12px 16px 17px;
+                border-radius: 0 0 4px 4px;
+                font-family: 'Open sans';
+                font-size: 0;
+                width: 335px;
+                position: absolute;
+                top: 0;
+                right: 10%;
+            }
+
+            .b_grid_widget * {
+                letter-spacing: 0.07em;
+            }
+            .b_grid_widget .top {
+                margin-bottom: 12px;
+            }
+            .b_grid_widget .title {
+                color: rgba(0,0,0,0.56);
+                font-size: 17px;
+                text-transform: uppercase;
+                line-height: 1.6em;
+                width: calc(100% - 20px);
+                display: inline-block;
+            }
+            .b_grid_widget .vid_trigger {
+                width: 20px;
+                display: inline-block;
+                height: 27px;
+                vertical-align: top;
+                cursor: pointer;
+                transition: opacity .4s;
+            }
+            .b_grid_widget .vid_trigger:hover {
+                opacity: .85;
+            }
+            .b_grid_widget .vid_trigger svg {
+                position: relative;
+                top: 4px;
+                right: 3px;
+
+            }
+            .b_grid_widget .vid_trigger path {
+                fill: rgba(0,0,0,0.56)
+            }
+            .b_grid_widget .input {
+                color: rgba(0,0,0,0.56);
+                width: 100px;
+                height: 40px;
+                padding: 0 10px;
+                border: 1px solid rgba(215, 215, 215, 1);
+                text-transform: uppercase;
+                font-size: 11px;
+                border-right-width: 0px;
+                transition: all .3s;
+            }
+            .b_grid_widget .input:nth-child(3) {
+                border-right-width: 1px;
+            }
+            .b_grid_widget .input:nth-child(4) {
+                border-left-width: 0px !important;
+            }
+            .b_grid_widget .input::-webkit-outer-spin-button,
+            .b_grid_widget .input::-webkit-inner-spin-button {
+                display: none;
+            }
+            .baseline_trigger_block {
+                font-size: 12px;
+                float: left;
+                color: rgba(0,0,0,0.56);
+                margin: 8px 0 0 5px
+            }
+            .baseline_trigger_block label {
+                margin-left: 2px;
+            }
+            #grid_baseline{
+                width: 0;
+                padding: 0;
+            }
+            .active_input{
+                width: 100px !important;
+                padding: 0 10px !important;
+                border-width: 1px !important;
+            }
+            .bottom_part{
+                width: 100%;
+                float: left;
+                margin-top: 10px;
+            }
+            #draw_button{
+                font-size: 14px;
+                line-height: 32px;
+                padding: 0 12px;
+                background: #2F77EB;
+                display: inline-block;
+                color: #fff;
+                float: right;
+            }
+
+            .with_gutter .input{
+                width: 25% !important;
+                padding: 0 10px !important;
+            }
+            .with_gutter #grid_baseline{
+                border-right-width: 1px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="grid_widget" class="b_grid_widget with_gutter">
+            <div class="top">
+                <div class="title">Grid</div>
+                <div class="vid_trigger">
+                    <svg viewBox="0 0 256 256">
+                        <path d="M178.666,134.4H77.331c-3.534,0-6.4-2.866-6.4-6.4s2.866-6.4,6.4-6.4h101.335c3.533,0,6.399,2.866,6.399,6.4  S182.199,134.4,178.666,134.4z M256,128C256,57.42,198.58,0,128,0C57.42,0,0,57.42,0,128c0,70.58,57.42,128,128,128  C198.58,256,256,198.58,256,128z M243.199,128c0,63.521-51.678,115.2-115.199,115.2c-63.522,0-115.2-51.679-115.2-115.2  C12.8,64.478,64.478,12.8,128,12.8C191.521,12.8,243.199,64.478,243.199,128z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="main_part">
+                <input id="grid_columns" type="number" min="0" placeholder="Columns" class="input">
+                <input id="grid_gutter" type="number" min="0" placeholder="Gutter" class="input">
+                <input id="grid_opacity" type="number" min="0" max="1" step="0.1" placeholder="Opacity" class="input">
+                <input id="grid_baseline" type="number" min="1" max="999" step="5" placeholder="Baseline" class="input">
+                <div class="bottom_part">
+                    <fieldset class="baseline_trigger_block">
+                        <input id="grid_baseline_checkbox" type="checkbox" checked="true" class="checkbox">
+                        <label for="grid_baseline_checkbox">baseline</label>
+                    </fieldset>
+                    <div id="draw_button">Draw</div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
