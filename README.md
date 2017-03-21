@@ -1,18 +1,18 @@
 # Client App Env
 
-###Quick Development Start
+### Quick Development Start
 
  * Clone latest version this repository
  * `npm install`
  * `npm run development`
  
-###Quick Production Start
+### Quick Production Start
 
  * Clone latest version this repository
  * `npm install`
  * `npm run production`
 
-###Running tests
+### Running tests
 
 * `npm run test`
 
@@ -23,6 +23,6 @@ For running tests in WebStorm add a **Extra Mocha options**
 
 * `npm run clear`
 
-###Documentation Generation
+### Documentation Generation
 
 * `npm run documentation`
